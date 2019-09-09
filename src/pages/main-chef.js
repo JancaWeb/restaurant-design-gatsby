@@ -2,13 +2,13 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { HomePage } from '../components/HomePage';
+import { MainChef } from '../components/MainChef';
 
-const IndexPage = () => (
+const MainChefPage = () => (
   <Layout>
     <SEO title="Home" />
-    <HomePage />
+    <MainChef />
   </Layout>
 )
 
-export default IndexPage
+export default MainChefPage
