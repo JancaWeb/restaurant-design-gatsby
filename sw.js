@@ -26,17 +26,21 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-13a0f1a3cd39cccca7db.js"
+    "url": "webpack-runtime-1c3d4e5fac0f5116a685.js"
   },
   {
-    "url": "app-1f76cef6b06e2fa1f6ca.js"
+    "url": "app-a04584a4a59108b62ca1.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-8bb432a974fde080d67c.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "d6fffec58f1e284efd19063bd3e3ab0d"
+    "revision": "cef55183de943dc5518cf7eed932a0ce"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "2ca58d57690c456e14e5fcdfa2760aa2"
   },
   {
     "url": "manifest.webmanifest",
@@ -59,12 +63,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/restaurant-design-gatsby`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-1f76cef6b06e2fa1f6ca.js`))) {
+  if (!resources || !(await caches.match(`/restaurant-design-gatsby/app-a04584a4a59108b62ca1.js`))) {
     return await fetch(event.request)
   }
 
@@ -77,7 +81,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/restaurant-design-gatsby/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
