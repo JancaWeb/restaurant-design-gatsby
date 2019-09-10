@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/restaurant-design-gatsby",
+  pathPrefix: '/',
   siteMetadata: {
     title: `Restaurant Project`,
     description: `Restaurant design project`,

@@ -69,7 +69,7 @@ export const InputWrapper = styled.div`
   
   button {
     margin-top: 1rem;
-    width: 5rem;
+    min-width: 5rem;
   }
 `;
 
